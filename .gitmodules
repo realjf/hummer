@@ -1,0 +1,3 @@
+[submodule "Hummer/vendor/spdlog"]
+	path = Hummer/vendor/spdlog
+	url = git@github.com:gabime/spdlog.git

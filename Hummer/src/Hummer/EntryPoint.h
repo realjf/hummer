@@ -6,7 +6,10 @@ extern Hummer::Application* Hummer::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	printf("Hummer Engine!\n");
+	Hummer::Log::Init();
+	HM_CORE_WARN("Initialized Log!");
+	HM_INFO("Hello!");
+
 	auto app = Hummer::CreateApplication();
 	app->Run();
 	delete app;
