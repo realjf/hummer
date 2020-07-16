@@ -1,5 +1,6 @@
 #pragma once
 
+
 // For use by Hummer applications
 
 #include "Hummer/Application.h"

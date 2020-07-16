@@ -1,10 +1,12 @@
 #pragma once
 
 #include "Core.h"
+
 #include "Events/Event.h"
 #include "Window.h"
 
 namespace Hummer {
+
 	class HUMMER_API Application
 	{
 	public:
@@ -12,6 +14,7 @@ namespace Hummer {
 		virtual ~Application();
 
 		void Run();
+
 
 		void OnEvent(Event& e);
 	private:

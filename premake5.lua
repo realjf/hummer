@@ -10,6 +10,7 @@ workspace "Hummer"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+
 IncludeDir = {}
 IncludeDir["GLFW"] = "Hummer/vendor/GLFW/include"
 
@@ -24,14 +25,17 @@ project "Hummer"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+
 	pchheader "hmpch.h"
 	pchsource "Hummer/src/hmpch.cpp"
+
 
 	files
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
+
 
 	includedirs
 	{
@@ -103,12 +107,14 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
+
 		systemversion "latest"
 
 		defines
 		{
 			"HM_PLATFORM_WINDOWS"
 		}
+
 
 	filter "configurations:Debug"
 		defines "HM_DEBUG"

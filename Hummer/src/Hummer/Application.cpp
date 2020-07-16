@@ -21,6 +21,7 @@ namespace Hummer {
 
 	}
 
+
 	void Application::OnEvent(Event& e)
 	{
 		HM_CORE_INFO("{0}", e);
