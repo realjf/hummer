@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Hummer">
+      <UniqueIdentifier>{734755B8-5FE9-7F8E-48A4-93E234E506DF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hummer\Events">
+      <UniqueIdentifier>{F7B3C795-6374-43CC-2CAF-8C49982E88A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Hummer.h" />
+    <ClInclude Include="src\Hummer\Application.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\EntryPoint.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Events\ApplicationEvent.h">
+      <Filter>Hummer\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Events\Event.h">
+      <Filter>Hummer\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Events\KeyEvent.h">
+      <Filter>Hummer\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Events\MouseEvent.h">
+      <Filter>Hummer\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Log.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Window.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hmpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Hummer\Application.cpp">
+      <Filter>Hummer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\Log.cpp">
+      <Filter>Hummer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hmpch.cpp" />
+  </ItemGroup>
+</Project>
