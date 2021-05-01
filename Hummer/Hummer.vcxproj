@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -106,6 +107,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -128,6 +130,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -149,6 +152,8 @@
     <ClInclude Include="src\Hummer\Events\Event.h" />
     <ClInclude Include="src\Hummer\Events\KeyEvent.h" />
     <ClInclude Include="src\Hummer\Events\MouseEvent.h" />
+    <ClInclude Include="src\Hummer\Layer.h" />
+    <ClInclude Include="src\Hummer\LayerStack.h" />
     <ClInclude Include="src\Hummer\Log.h" />
     <ClInclude Include="src\Hummer\Window.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
@@ -156,6 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hummer\Application.cpp" />
+    <ClCompile Include="src\Hummer\Layer.cpp" />
+    <ClCompile Include="src\Hummer\LayerStack.cpp" />
     <ClCompile Include="src\Hummer\Log.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\hmpch.cpp">

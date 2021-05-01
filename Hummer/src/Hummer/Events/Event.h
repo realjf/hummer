@@ -37,8 +37,10 @@ namespace Hummer {
 
 	class HUMMER_API Event
 	{
-		friend class EventDispatcher;
+		// friend class EventDispatcher;
 	public:
+		bool Handled = false;
+
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
@@ -48,9 +50,6 @@ namespace Hummer {
 		{
 			return GetCategoryFlags() & category;
 		}
-
-	protected:
-		bool m_Handled = false;
 	};
 
 	class EventDispatcher
@@ -64,12 +63,12 @@ namespace Hummer {
 		}
 
 		// F will be deduced by the compiler
-		template<typename T>
-		bool Dispatch(const T& func)
+		template<typename T, typename F>
+		bool Dispatch(const F& func)
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.Handled = func(static_cast<T&>(m_Event));
+				m_Event.Handled |= func(static_cast<T&>(m_Event));
 				return true;
 			}
 			return false;

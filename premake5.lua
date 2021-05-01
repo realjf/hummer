@@ -68,14 +68,17 @@ project "Hummer"
 
 	filter "configurations:Debug"
 		defines "HM_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HM_RELEASE"
+		buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "HM_DIST"
+		buildoptions "/MD"
 		symbols "On"
 
 project "Sandbox"

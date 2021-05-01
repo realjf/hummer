@@ -37,6 +37,12 @@
     <ClInclude Include="src\Hummer\Events\MouseEvent.h">
       <Filter>Hummer\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hummer\Layer.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\LayerStack.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hummer\Log.h">
       <Filter>Hummer</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hummer\Application.cpp">
+      <Filter>Hummer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\Layer.cpp">
+      <Filter>Hummer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\LayerStack.cpp">
       <Filter>Hummer</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\Log.cpp">

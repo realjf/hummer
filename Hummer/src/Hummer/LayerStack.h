@@ -7,7 +7,7 @@
 
 namespace Hummer {
 
-	class LayerStack
+	class HUMMER_API LayerStack
 	{
 	public:
 		LayerStack();
