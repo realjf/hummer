@@ -64,11 +64,11 @@ namespace Hummer {
 
 		// F will be deduced by the compiler
 		template<typename T, typename F>
-		bool Dispatch(const F& func)
+		bool Dispatch(F&& func)
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.Handled |= func(static_cast<T&>(m_Event));
+				m_Event.Handled |= std::forward<F>(func)(static_cast<T&>(m_Event));
 				return true;
 			}
 			return false;
