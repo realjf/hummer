@@ -5,6 +5,8 @@
 #include "Hummer/Events/KeyEvent.h"
 #include "Hummer/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace Hummer {
 
 	static bool s_GLFWInitialized = false;
@@ -46,6 +48,8 @@ namespace Hummer {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		HM_CORE_ASSERT(status, "Failed to initialze Glad!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

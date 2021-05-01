@@ -62,7 +62,8 @@ project "Hummer"
 		defines
 		{
 			"HM_PLATFORM_WINDOWS",
-			"HM_BUILD_DLL"
+			"HM_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
