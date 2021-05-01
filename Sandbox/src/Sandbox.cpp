@@ -24,7 +24,8 @@ class Sandbox : public Hummer::Application
 public:
 	Sandbox()
 	{
-		//PushLayer(new ExampleLayer());
+		PushLayer(new ExampleLayer());
+		PushOverlay(new Hummer::ImGuiLayer());
 	}
 
 	~Sandbox()

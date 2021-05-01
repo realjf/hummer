@@ -14,10 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Hummer/vendor/GLFW/include"
 IncludeDir["Glad"] = "Hummer/vendor/Glad/include"
-IncludeDir["ImGui"] = "Hummer/vendor/imgui/include"
+IncludeDir["ImGui"] = "Hummer/vendor/imgui"
 
 include "Hummer/vendor/GLFW"
 include "Hummer/vendor/GLAD"
+include "Hummer/vendor/imgui"
 
 
 project "Hummer"
