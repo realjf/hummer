@@ -153,11 +153,13 @@
     <ClInclude Include="src\Hummer\Events\KeyEvent.h" />
     <ClInclude Include="src\Hummer\Events\MouseEvent.h" />
     <ClInclude Include="src\Hummer\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Hummer\Input.h" />
     <ClInclude Include="src\Hummer\Layer.h" />
     <ClInclude Include="src\Hummer\LayerStack.h" />
     <ClInclude Include="src\Hummer\Log.h" />
     <ClInclude Include="src\Hummer\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\hmpch.h" />
   </ItemGroup>
@@ -168,6 +170,7 @@
     <ClCompile Include="src\Hummer\LayerStack.cpp" />
     <ClCompile Include="src\Hummer\Log.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\hmpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
