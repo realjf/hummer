@@ -8,9 +8,20 @@ public:
 	{
 	}
 
+	~ExampleLayer() {}
+
 	void OnUpdate() override
 	{
 		HM_INFO("ExampleLayer::Update");
+	}
+
+	void OnAttach()
+	{
+
+	}
+
+	void OnDetach()
+	{
 	}
 
 	void OnEvent(Hummer::Event& event) override
@@ -24,7 +35,7 @@ class Sandbox : public Hummer::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
 		PushOverlay(new Hummer::ImGuiLayer());
 	}
 
