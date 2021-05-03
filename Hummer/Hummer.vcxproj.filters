@@ -46,6 +46,12 @@
     <ClInclude Include="src\Hummer\ImGui\ImGuiLayer.h">
       <Filter>Hummer\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hummer\Input.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\KeyCodes.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hummer\Layer.h">
       <Filter>Hummer</Filter>
     </ClInclude>
@@ -55,20 +61,22 @@
     <ClInclude Include="src\Hummer\Log.h">
       <Filter>Hummer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hummer\MouseButtonCodes.h">
+      <Filter>Hummer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hummer\Window.h">
       <Filter>Hummer</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\hmpch.h" />
-    <ClInclude Include="src\Hummer\Input.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
-    <ClInclude Include="src\Hummer\KeyCodes.h" />
-    <ClInclude Include="src\Hummer\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hummer\Application.cpp">
@@ -89,10 +97,12 @@
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\hmpch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

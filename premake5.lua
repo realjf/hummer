@@ -94,6 +94,8 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "On"
 
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -117,9 +119,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
-
 		systemversion "latest"
 
 		defines
@@ -130,12 +129,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "HM_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HM_RELEASE"
+		runtime "Release"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "HM_DIST"
+		runtime "Release"
 		symbols "On"

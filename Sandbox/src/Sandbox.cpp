@@ -3,29 +3,20 @@
 class ExampleLayer : public Hummer::Layer
 {
 public:
-	ExampleLayer()
-		: Layer("Example")
-	{
-	}
+	ExampleLayer() : Layer("ExampleLayer") {}
+	~ExampleLayer() {};
 
-	~ExampleLayer() {}
+	void OnAttach() {};
 
-	void OnUpdate() override
+	void OnDetach() {};
+
+	void OnUpdate()
 	{
 		if (Hummer::Input::IsKeyPressed(HM_KEY_TAB))
 			HM_TRACE("Tab key is pressed!");
 	}
 
-	void OnAttach()
-	{
-
-	}
-
-	void OnDetach()
-	{
-	}
-
-	void OnEvent(Hummer::Event& event) override
+	void OnEvent(Hummer::Event& event)
 	{
 		HM_TRACE("{0}", event);
 	}
@@ -36,7 +27,7 @@ class Sandbox : public Hummer::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
 		PushOverlay(new Hummer::ImGuiLayer());
 	}
 
