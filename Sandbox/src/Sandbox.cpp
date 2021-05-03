@@ -1,9 +1,12 @@
 #include <Hummer.h>
 
+
 class ExampleLayer : public Hummer::Layer
 {
 public:
-	ExampleLayer() : Layer("ExampleLayer") {}
+	ExampleLayer() : Layer("ExampleLayer") {
+		
+	}
 	~ExampleLayer() {};
 
 	void OnAttach() {};
