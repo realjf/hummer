@@ -154,9 +154,11 @@
     <ClInclude Include="src\Hummer\Events\MouseEvent.h" />
     <ClInclude Include="src\Hummer\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Hummer\Input.h" />
+    <ClInclude Include="src\Hummer\KeyCodes.h" />
     <ClInclude Include="src\Hummer\Layer.h" />
     <ClInclude Include="src\Hummer\LayerStack.h" />
     <ClInclude Include="src\Hummer\Log.h" />
+    <ClInclude Include="src\Hummer\MouseButtonCodes.h" />
     <ClInclude Include="src\Hummer\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />

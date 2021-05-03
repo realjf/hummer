@@ -67,6 +67,8 @@
     <ClInclude Include="src\hmpch.h" />
     <ClInclude Include="src\Hummer\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Hummer\KeyCodes.h" />
+    <ClInclude Include="src\Hummer\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hummer\Application.cpp">
