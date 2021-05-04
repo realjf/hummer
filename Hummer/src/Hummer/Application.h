@@ -7,6 +7,7 @@
 #include "Events/Event.h"
 #include "Hummer/Events/ApplicationEvent.h"
 
+#include "Hummer/ImGui/ImGuiLayer.h"
 
 namespace Hummer {
 
@@ -31,6 +32,7 @@ namespace Hummer {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:
