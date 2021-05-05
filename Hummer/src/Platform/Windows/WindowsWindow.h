@@ -1,8 +1,11 @@
 #pragma once
 
 #include "Hummer/Window.h"
+#include "Hummer/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
+
+
 
 namespace Hummer {
 
@@ -29,6 +32,7 @@ namespace Hummer {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
