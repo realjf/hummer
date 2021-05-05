@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef HM_PLATFORM_WINDOWS
+#if HM_DYNAMIC_LINK
 	#ifdef HM_BUILD_DLL
 		#define HUMMER_API __declspec(dllexport)
 	#else
 		#define HUMMER_API __declspec(dllimport)
 	#endif
+#else
+	#define HUMMER_API
+#endif
 #else
 	#error Hummer only support Windows!
 #endif
