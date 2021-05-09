@@ -177,6 +177,9 @@ namespace Hummer {
 			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 			RenderCommand::Clear();
 
+			m_Camera.SetPosition({ 0.5f, 0.5f, 0.0f });
+			m_Camera.SetRotation(45.0f);
+
 			Renderer::BeginScene(m_Camera);
 			
 			Renderer::Submit(m_BlueShader, m_SquareVA);
