@@ -8,7 +8,7 @@ namespace Hummer {
 	{
 	public:
 		OpenGLVertexArray();
-		virtual ~OpenGLVertexArray() {}
+		virtual ~OpenGLVertexArray();
 
 
 
