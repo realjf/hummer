@@ -13,6 +13,8 @@
 #include "Hummer/Renderer/Buffer.h"
 #include "Hummer/Renderer/VertexArray.h"
 
+#include "Hummer/Renderer/OrthographicCamera.h"
+
 namespace Hummer {
 
 	class HUMMER_API Application
@@ -45,6 +47,8 @@ namespace Hummer {
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
