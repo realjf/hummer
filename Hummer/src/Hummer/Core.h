@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #ifdef HM_PLATFORM_WINDOWS
 #if HM_DYNAMIC_LINK
 	#ifdef HM_BUILD_DLL
@@ -26,3 +28,14 @@
 
 #define HM_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
 
+namespace Hummer {
+
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+
+
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+
+
+}

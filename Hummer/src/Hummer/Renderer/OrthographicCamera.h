@@ -7,6 +7,7 @@ namespace Hummer {
 	class OrthographicCamera
 	{
 	public:
+		OrthographicCamera(){}
 		OrthographicCamera(float left, float right, float bottom, float top);
 
 		const glm::vec3& GetPosition() const { return m_Position; }

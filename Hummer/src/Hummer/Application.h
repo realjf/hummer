@@ -7,17 +7,14 @@
 #include "Events/Event.h"
 #include "Hummer/Events/ApplicationEvent.h"
 
+#include "Hummer/Core/TimeStep.h"
+
 #include "Hummer/ImGui/ImGuiLayer.h"
 
-#include "Hummer/Renderer/Shader.h"
-#include "Hummer/Renderer/Buffer.h"
-#include "Hummer/Renderer/VertexArray.h"
-
-#include "Hummer/Renderer/OrthographicCamera.h"
 
 namespace Hummer {
 
-	class HUMMER_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -42,13 +39,8 @@ namespace Hummer {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
+		TimeStep m_TimeStep;
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

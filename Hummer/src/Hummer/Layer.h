@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Hummer/Core.h"
+#include "Hummer/Core/TimeStep.h"
 #include "Hummer/Events/Event.h"
 
 namespace Hummer {
@@ -12,7 +13,7 @@ namespace Hummer {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(TimeStep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 
