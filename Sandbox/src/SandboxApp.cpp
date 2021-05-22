@@ -35,18 +35,19 @@ public:
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 		m_SquareVA.reset(Hummer::VertexArray::Create());
-		float squareVertices[3 * 4] = {
-			-0.5f, -0.5f, 0.0f,
-			0.5f, -0.5f, 0.0f,
-			0.5f, 0.5f, 0.0f,
-			-0.5f, 0.5f, 0.0f
+		float squareVertices[5 * 4] = {
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			0.5f, 0.5f, 0.0f, 1.0f, 1.0f,
+			-0.5f, 0.5f, 0.0f, 0.0f, 1.0f,
 		};
 
 		std::shared_ptr<Hummer::VertexBuffer> squareVB;
 		squareVB.reset(Hummer::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 
 		squareVB->SetLayout({
-			{ Hummer::ShaderDataType::Float3, "a_Position" }
+			{ Hummer::ShaderDataType::Float3, "a_Position" },
+			{ Hummer::ShaderDataType::Float2, "a_TexCoord" }
 			});
 		m_SquareVA->AddVertexBuffer(squareVB);
 
@@ -93,7 +94,7 @@ public:
 
 		m_Shader.reset(Hummer::Shader::Create(vertexSrc, fragmentSrc));
 
-		std::string blueShaderVertexSrc = R"(
+		std::string flatShaderVertexSrc = R"(
 			#version 330 core
 
 			layout(location = 0) in vec3 a_Position;
@@ -110,7 +111,7 @@ public:
 			}
 		)";
 
-		std::string blueShaderFragmentSrc = R"(
+		std::string flatShaderFragmentSrc = R"(
 			#version 330 core
 
 			layout(location = 0) out vec4 color;
@@ -124,7 +125,49 @@ public:
 			}
 		)";
 
-		m_BlueShader.reset(Hummer::Shader::Create(blueShaderVertexSrc, blueShaderFragmentSrc));
+		m_FlatColorShader.reset(Hummer::Shader::Create(flatShaderVertexSrc, flatShaderFragmentSrc));
+
+
+		std::string textureShaderVertexSrc = R"(
+			#version 330 core
+
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec2 a_TexCoord;
+
+			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
+			
+			out vec2 v_TexCoord;
+
+			void main()
+			{
+				v_TexCoord = a_TexCoord;
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
+			}
+		)";
+
+		std::string textureShaderFragmentSrc = R"(
+			#version 330 core
+
+			layout(location = 0) out vec4 color;
+
+			in vec2 v_TexCoord;
+
+			uniform sampler2D u_Texture;
+
+			void main()
+			{
+				color = texture(u_Texture, v_TexCoord);
+			}
+		)";
+
+		m_TextureShader.reset(Hummer::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+
+		m_Texture = Hummer::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_RealJFTexture = Hummer::Texture2D::Create("assets/textures/realjf_logo.png");
+		std::dynamic_pointer_cast<Hummer::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<Hummer::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		
 	}
 	~ExampleLayer() {};
 
@@ -161,8 +204,8 @@ public:
 	
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
-		std::dynamic_pointer_cast<Hummer::OpenGLShader>(m_BlueShader)->Bind();
-		std::dynamic_pointer_cast<Hummer::OpenGLShader>(m_BlueShader)->UploadUniformFloat3("u_Color", m_SquareColor);
+		std::dynamic_pointer_cast<Hummer::OpenGLShader>(m_FlatColorShader)->Bind();
+		std::dynamic_pointer_cast<Hummer::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
 
 		for (int y = 0; y < 20; y++)
 		{
@@ -170,10 +213,15 @@ public:
 			{
 				glm::vec3 pos(x * 0.11f, y * 0.11f, 0.0f);
 				glm::mat4 transform = glm::translate(glm::mat4(1.0f), pos) * scale;
-				Hummer::Renderer::Submit(m_BlueShader, m_SquareVA, transform);
+				Hummer::Renderer::Submit(m_FlatColorShader, m_SquareVA, transform);
 			}
 		}
-		Hummer::Renderer::Submit(m_Shader, m_VertexArray);
+
+		m_Texture->Bind();
+		Hummer::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_RealJFTexture->Bind();
+		Hummer::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		//Hummer::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Hummer::Renderer::EndScene();
 	}
@@ -195,8 +243,11 @@ private:
 	Hummer::Ref<Hummer::Shader> m_Shader;
 	Hummer::Ref<Hummer::VertexArray> m_VertexArray;
 
-	Hummer::Ref<Hummer::Shader> m_BlueShader;
+	Hummer::Ref<Hummer::Shader> m_FlatColorShader, m_TextureShader;
 	Hummer::Ref<Hummer::VertexArray> m_SquareVA;
+
+	Hummer::Ref<Hummer::Texture2D> m_Texture;
+	Hummer::Ref<Hummer::Texture2D> m_RealJFTexture;
 
 	Hummer::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;

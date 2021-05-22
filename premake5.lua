@@ -16,6 +16,7 @@ IncludeDir["GLFW"] = "Hummer/vendor/GLFW/include"
 IncludeDir["Glad"] = "Hummer/vendor/Glad/include"
 IncludeDir["ImGui"] = "Hummer/vendor/imgui"
 IncludeDir["glm"] = "Hummer/vendor/glm"
+IncludeDir["stb"] = "Hummer/vendor/stb_image"
 
 include "Hummer/vendor/GLFW"
 include "Hummer/vendor/GLAD"
@@ -41,6 +42,8 @@ project "Hummer"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
@@ -58,7 +61,8 @@ project "Hummer"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb}",
 	}
 
 	links

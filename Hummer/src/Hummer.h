@@ -22,6 +22,7 @@
 
 #include "Hummer/Renderer/Buffer.h"
 #include "Hummer/Renderer/Shader.h"
+#include "Hummer/Renderer/Texture.h"
 #include "Hummer/Renderer/VertexArray.h"
 
 #include "Hummer/Renderer/OrthographicCamera.h"
