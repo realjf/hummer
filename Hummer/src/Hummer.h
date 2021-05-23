@@ -30,6 +30,6 @@
 // ----------------------------------------------
 
 // ----- Entry Point ------------- 
-#include "Hummer/Core/EntryPoint.h"
+//#include "Hummer/Core/EntryPoint.h"
 // -------------------------------
 
