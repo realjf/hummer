@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hummer/Core.h"
+#include "Hummer/Core/Core.h"
 
 namespace Hummer {
 	class HUMMER_API Input

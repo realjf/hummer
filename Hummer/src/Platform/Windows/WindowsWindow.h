@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hummer/Window.h"
+#include "Hummer/Core/Window.h"
 #include "Hummer/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

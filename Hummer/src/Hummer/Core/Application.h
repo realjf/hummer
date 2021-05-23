@@ -3,8 +3,8 @@
 #include "Core.h"
 
 #include "Window.h"
-#include "Hummer/LayerStack.h"
-#include "Events/Event.h"
+#include "Hummer/Core/LayerStack.h"
+#include "Hummer/Events/Event.h"
 #include "Hummer/Events/ApplicationEvent.h"
 
 #include "Hummer/Core/TimeStep.h"

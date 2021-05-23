@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hummer/Core.h"
+#include "Hummer/Core/Core.h"
 #include "hmpch.h"
 
 namespace Hummer {

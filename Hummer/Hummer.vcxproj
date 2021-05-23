@@ -141,32 +141,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Hummer.h" />
-    <ClInclude Include="src\Hummer\Application.h" />
-    <ClInclude Include="src\Hummer\Core.h" />
+    <ClInclude Include="src\Hummer\Core\Application.h" />
+    <ClInclude Include="src\Hummer\Core\Core.h" />
+    <ClInclude Include="src\Hummer\Core\EntryPoint.h" />
+    <ClInclude Include="src\Hummer\Core\Input.h" />
+    <ClInclude Include="src\Hummer\Core\KeyCodes.h" />
+    <ClInclude Include="src\Hummer\Core\Layer.h" />
+    <ClInclude Include="src\Hummer\Core\LayerStack.h" />
+    <ClInclude Include="src\Hummer\Core\Log.h" />
+    <ClInclude Include="src\Hummer\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\Hummer\Core\TimeStep.h" />
-    <ClInclude Include="src\Hummer\EntryPoint.h" />
+    <ClInclude Include="src\Hummer\Core\Window.h" />
     <ClInclude Include="src\Hummer\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Hummer\Events\Event.h" />
     <ClInclude Include="src\Hummer\Events\KeyEvent.h" />
     <ClInclude Include="src\Hummer\Events\MouseEvent.h" />
     <ClInclude Include="src\Hummer\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Hummer\Input.h" />
-    <ClInclude Include="src\Hummer\KeyCodes.h" />
-    <ClInclude Include="src\Hummer\Layer.h" />
-    <ClInclude Include="src\Hummer\LayerStack.h" />
-    <ClInclude Include="src\Hummer\Log.h" />
-    <ClInclude Include="src\Hummer\MouseButtonCodes.h" />
-    <ClInclude Include="src\Hummer\OrthographicCameraController.h" />
     <ClInclude Include="src\Hummer\Renderer\Buffer.h" />
     <ClInclude Include="src\Hummer\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Hummer\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Hummer\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\Hummer\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Hummer\Renderer\Renderer.h" />
     <ClInclude Include="src\Hummer\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Hummer\Renderer\Shader.h" />
     <ClInclude Include="src\Hummer\Renderer\Texture.h" />
     <ClInclude Include="src\Hummer\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Hummer\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -592,15 +592,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Hummer\Application.cpp" />
+    <ClCompile Include="src\Hummer\Core\Application.cpp" />
+    <ClCompile Include="src\Hummer\Core\Layer.cpp" />
+    <ClCompile Include="src\Hummer\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Hummer\Core\Log.cpp" />
     <ClCompile Include="src\Hummer\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Hummer\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Hummer\Layer.cpp" />
-    <ClCompile Include="src\Hummer\LayerStack.cpp" />
-    <ClCompile Include="src\Hummer\Log.cpp" />
-    <ClCompile Include="src\Hummer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Hummer\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Hummer\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\Hummer\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Hummer\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Hummer\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Hummer\Renderer\RendererAPI.cpp" />

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hummer/Core.h"
+#include "Hummer/Core/Core.h"
 #include "Hummer/Core/TimeStep.h"
 #include "Hummer/Events/Event.h"
 

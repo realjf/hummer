@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "Renderer/OrthographicCamera.h"
+#include "Hummer/Renderer/OrthographicCamera.h"
 #include "Hummer/Core/TimeStep.h"
 
 #include "Hummer/Events/MouseEvent.h"

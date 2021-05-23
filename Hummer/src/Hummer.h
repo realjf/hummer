@@ -3,17 +3,17 @@
 
 // For use by Hummer applications
 
-#include "Hummer/Application.h"
-#include "Hummer/Layer.h"
-#include "Hummer/Log.h"
+#include "Hummer/Core/Application.h"
+#include "Hummer/Core/Layer.h"
+#include "Hummer/Core/Log.h"
 
 #include "Hummer/Core/TimeStep.h"
 
 
-#include "Hummer/Input.h"
-#include "Hummer/KeyCodes.h"
-#include "Hummer/MouseButtonCodes.h"
-#include "Hummer/OrthographicCameraController.h"
+#include "Hummer/Core/Input.h"
+#include "Hummer/Core/KeyCodes.h"
+#include "Hummer/Core/MouseButtonCodes.h"
+#include "Hummer/Renderer/OrthographicCameraController.h"
 
 #include "Hummer/ImGui/ImGuiLayer.h"
 
@@ -30,6 +30,6 @@
 // ----------------------------------------------
 
 // ----- Entry Point ------------- 
-#include "Hummer/EntryPoint.h"
+#include "Hummer/Core/EntryPoint.h"
 // -------------------------------
 

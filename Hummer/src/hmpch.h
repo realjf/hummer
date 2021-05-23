@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Hummer/Log.h"
+#include "Hummer/Core/Log.h"
 
 #ifdef HM_PLATFORM_WINDOWS
 	#include <Windows.h>

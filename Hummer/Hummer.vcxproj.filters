@@ -57,17 +57,38 @@
     <ClInclude Include="src\Hummer.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hummer\Application.h">
-      <Filter>src\Hummer</Filter>
+    <ClInclude Include="src\Hummer\Core\Application.h">
+      <Filter>src\Hummer\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hummer\Core.h">
-      <Filter>src\Hummer</Filter>
+    <ClInclude Include="src\Hummer\Core\Core.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core\EntryPoint.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core\Input.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core\KeyCodes.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core\Layer.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core\LayerStack.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core\Log.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core\MouseButtonCodes.h">
+      <Filter>src\Hummer\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Core\TimeStep.h">
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hummer\EntryPoint.h">
-      <Filter>src\Hummer</Filter>
+    <ClInclude Include="src\Hummer\Core\Window.h">
+      <Filter>src\Hummer\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Events\ApplicationEvent.h">
       <Filter>src\Hummer\Events</Filter>
@@ -84,24 +105,6 @@
     <ClInclude Include="src\Hummer\ImGui\ImGuiLayer.h">
       <Filter>src\Hummer\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hummer\Input.h">
-      <Filter>src\Hummer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hummer\KeyCodes.h">
-      <Filter>src\Hummer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hummer\Layer.h">
-      <Filter>src\Hummer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hummer\LayerStack.h">
-      <Filter>src\Hummer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hummer\Log.h">
-      <Filter>src\Hummer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hummer\MouseButtonCodes.h">
-      <Filter>src\Hummer</Filter>
-    </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\Buffer.h">
       <Filter>src\Hummer\Renderer</Filter>
     </ClInclude>
@@ -109,6 +112,9 @@
       <Filter>src\Hummer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\OrthographicCamera.h">
+      <Filter>src\Hummer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Renderer\OrthographicCameraController.h">
       <Filter>src\Hummer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\RenderCommand.h">
@@ -128,9 +134,6 @@
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\VertexArray.h">
       <Filter>src\Hummer\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Hummer\Window.h">
-      <Filter>src\Hummer</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -1401,11 +1404,19 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hummer\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Hummer\Application.cpp">
-      <Filter>src\Hummer</Filter>
+    <ClCompile Include="src\Hummer\Core\Application.cpp">
+      <Filter>src\Hummer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\Core\Layer.cpp">
+      <Filter>src\Hummer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\Core\LayerStack.cpp">
+      <Filter>src\Hummer\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\Core\Log.cpp">
+      <Filter>src\Hummer\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\ImGui\ImGuiBuild.cpp">
       <Filter>src\Hummer\ImGui</Filter>
@@ -1413,19 +1424,13 @@
     <ClCompile Include="src\Hummer\ImGui\ImGuiLayer.cpp">
       <Filter>src\Hummer\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Hummer\Layer.cpp">
-      <Filter>src\Hummer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hummer\LayerStack.cpp">
-      <Filter>src\Hummer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Hummer\Log.cpp">
-      <Filter>src\Hummer</Filter>
-    </ClCompile>
     <ClCompile Include="src\Hummer\Renderer\Buffer.cpp">
       <Filter>src\Hummer\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\Renderer\OrthographicCamera.cpp">
+      <Filter>src\Hummer\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\Renderer\OrthographicCameraController.cpp">
       <Filter>src\Hummer\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\Renderer\RenderCommand.cpp">
@@ -1476,6 +1481,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Hummer\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>

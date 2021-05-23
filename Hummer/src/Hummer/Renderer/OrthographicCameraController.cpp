@@ -1,8 +1,8 @@
 #include "hmpch.h"
 #include "OrthographicCameraController.h"
 
-#include "Hummer/Input.h"
-#include "Hummer/KeyCodes.h"
+#include "Hummer/Core/Input.h"
+#include "Hummer/Core/KeyCodes.h"
 
 namespace Hummer
 {

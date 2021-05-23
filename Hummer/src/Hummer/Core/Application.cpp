@@ -1,7 +1,7 @@
 #include "hmpch.h"
 #include "Application.h"
 
-#include "Hummer/Log.h"
+#include "Hummer/Core/Log.h"
 
 #include "Hummer/Renderer/Renderer.h"
 

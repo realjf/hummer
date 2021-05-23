@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hummer/Layer.h"
+#include "Hummer/Core/Layer.h"
 
 #include "Hummer/Events/KeyEvent.h"
 #include "Hummer/Events/MouseEvent.h"

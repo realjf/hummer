@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "Hummer/Input.h"
+#include "Hummer/Core/Input.h"
 
 namespace Hummer {
 	class WindowsInput : public Input

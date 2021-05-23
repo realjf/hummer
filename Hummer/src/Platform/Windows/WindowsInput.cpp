@@ -1,7 +1,7 @@
 #include "hmpch.h"
 #include "WindowsInput.h"
 
-#include "Hummer/Application.h"
+#include "Hummer/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Hummer {
