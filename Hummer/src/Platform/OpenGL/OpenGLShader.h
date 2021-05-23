@@ -12,11 +12,13 @@ namespace Hummer {
 	{
 	public:
 		OpenGLShader(const std::string& filepath);
-		OpenGLShader(const std::string& vertexSrc, const std::string& fragmentSrc);
+		OpenGLShader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc);
 		~OpenGLShader();
 
 		void Bind() const;
 		void UnBind() const;
+
+		virtual const std::string& GetName() const override { return m_Name; }
 
 		void UploadUniformMat3(const std::string& name, const glm::mat3& matrix);
 		void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
@@ -35,6 +37,7 @@ namespace Hummer {
 
 	private:
 		uint32_t m_RendererID;
+		std::string m_Name;
 	};
 }
 

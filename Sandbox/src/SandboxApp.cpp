@@ -6,6 +6,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+
 class ExampleLayer : public Hummer::Layer
 {
 public:
@@ -92,7 +93,7 @@ public:
 			}
 		)";
 
-		m_Shader.reset(Hummer::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = Hummer::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string flatShaderVertexSrc = R"(
 			#version 330 core
@@ -125,14 +126,14 @@ public:
 			}
 		)";
 
-		m_FlatColorShader.reset(Hummer::Shader::Create(flatShaderVertexSrc, flatShaderFragmentSrc));
+		m_FlatColorShader = Hummer::Shader::Create("FlatColor", flatShaderVertexSrc, flatShaderFragmentSrc);
 
-		m_TextureShader.reset(Hummer::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Hummer::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_RealJFTexture = Hummer::Texture2D::Create("assets/textures/realjf_logo.png");
-		std::dynamic_pointer_cast<Hummer::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Hummer::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Hummer::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Hummer::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 		
 	}
 	~ExampleLayer() {};
@@ -183,10 +184,12 @@ public:
 			}
 		}
 
+		auto textureShader = m_ShaderLibrary.Get("Texture");
+
 		m_Texture->Bind();
-		Hummer::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Hummer::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		m_RealJFTexture->Bind();
-		Hummer::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Hummer::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		//Hummer::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Hummer::Renderer::EndScene();
@@ -206,10 +209,11 @@ public:
 	}
 
 private:
+	Hummer::ShaderLibrary m_ShaderLibrary;
 	Hummer::Ref<Hummer::Shader> m_Shader;
 	Hummer::Ref<Hummer::VertexArray> m_VertexArray;
 
-	Hummer::Ref<Hummer::Shader> m_FlatColorShader, m_TextureShader;
+	Hummer::Ref<Hummer::Shader> m_FlatColorShader;
 	Hummer::Ref<Hummer::VertexArray> m_SquareVA;
 
 	Hummer::Ref<Hummer::Texture2D> m_Texture;
