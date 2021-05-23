@@ -131,7 +131,7 @@ public:
 		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Hummer::Texture2D::Create("assets/textures/Checkerboard.png");
-		m_RealJFTexture = Hummer::Texture2D::Create("assets/textures/realjf_logo.png");
+		m_RealJFTexture = Hummer::Texture2D::Create("assets/textures/hummer_logo.png");
 		std::dynamic_pointer_cast<Hummer::OpenGLShader>(textureShader)->Bind();
 		std::dynamic_pointer_cast<Hummer::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 		
