@@ -10,7 +10,7 @@
 class ExampleLayer : public Hummer::Layer
 {
 public:
-	ExampleLayer() : Layer("ExampleLayer") , m_Camera(-1.0f, 1.0f, -1.0f, 1.0f), m_CameraPosition(0.0f)
+	ExampleLayer() : Layer("ExampleLayer") , m_CameraController(1280.0f / 720.0f, true)
 	{
 		m_VertexArray.reset(Hummer::VertexArray::Create());
 
@@ -144,29 +144,14 @@ public:
 
 	void OnUpdate(Hummer::TimeStep ts) override
 	{
+		// Update
+		m_CameraController.OnUpdate(ts);
 
-		HM_TRACE("Delta time: {0}S ({1}ms)", ts.GetSeconds(), ts.GetMilliseconds());
-		if (Hummer::Input::IsKeyPressed(HM_KEY_LEFT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
-		else if (Hummer::Input::IsKeyPressed(HM_KEY_RIGHT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-		if (Hummer::Input::IsKeyPressed(HM_KEY_DOWN))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-		else if (Hummer::Input::IsKeyPressed(HM_KEY_UP))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-
-		if (Hummer::Input::IsKeyPressed(HM_KEY_A))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-		if (Hummer::Input::IsKeyPressed(HM_KEY_D))
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-
+		// Render
 		Hummer::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Hummer::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		Hummer::Renderer::BeginScene(m_Camera);
+		Hummer::Renderer::BeginScene(m_CameraController.GetCamera());
 
 	
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
@@ -203,9 +188,9 @@ public:
 		ImGui::End();
 	}
 
-	void OnEvent(Hummer::Event& event)
+	void OnEvent(Hummer::Event& e) override
 	{
-
+		m_CameraController.OnEvent(e);
 	}
 
 private:
@@ -219,11 +204,7 @@ private:
 	Hummer::Ref<Hummer::Texture2D> m_Texture;
 	Hummer::Ref<Hummer::Texture2D> m_RealJFTexture;
 
-	Hummer::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 10.0f;
-	float m_CameraMoveSpeed = 0.1f;
+	Hummer::OrthographicCameraController m_CameraController;
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };
