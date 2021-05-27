@@ -19,6 +19,7 @@
 
 // -------- Renderer ----------------------------
 #include "Hummer/Renderer/Renderer.h"
+#include "Hummer/Renderer/Renderer2D.h"
 #include "Hummer/Renderer/RenderCommand.h"
 
 #include "Hummer/Renderer/Buffer.h"
