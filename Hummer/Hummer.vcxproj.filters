@@ -10,6 +10,9 @@
     <Filter Include="src\Hummer\Core">
       <UniqueIdentifier>{423F4EFB-AECA-BBBF-B7DB-3EB423E617C0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Hummer\Debug">
+      <UniqueIdentifier>{A0822265-8C7B-41B7-B5AD-263CA10521C3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Hummer\Events">
       <UniqueIdentifier>{4E29FD0C-BA3F-FBA2-03B7-86C46F0CCC2A}</UniqueIdentifier>
     </Filter>
@@ -90,6 +93,9 @@
     <ClInclude Include="src\Hummer\Core\Window.h">
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hummer\Debug\Instrumentor.h">
+      <Filter>src\Hummer\Debug</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hummer\Events\ApplicationEvent.h">
       <Filter>src\Hummer\Events</Filter>
     </ClInclude>
@@ -121,6 +127,9 @@
       <Filter>src\Hummer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\Renderer.h">
+      <Filter>src\Hummer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Renderer\Renderer2D.h">
       <Filter>src\Hummer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\RendererAPI.h">
@@ -1404,8 +1413,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hummer\Renderer\Renderer2D.h" />
-    <ClInclude Include="src\Hummer\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hummer\Core\Application.cpp">
@@ -1439,6 +1446,9 @@
       <Filter>src\Hummer\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\Renderer\Renderer.cpp">
+      <Filter>src\Hummer\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\Renderer\Renderer2D.cpp">
       <Filter>src\Hummer\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\Renderer\RendererAPI.cpp">
@@ -1483,6 +1493,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Hummer\Renderer\Renderer2D.cpp" />
   </ItemGroup>
 </Project>

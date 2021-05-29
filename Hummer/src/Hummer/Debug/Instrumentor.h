@@ -202,7 +202,7 @@ namespace Hummer {
 	}
 }
 
-#define HM_PROFILE 0
+#define HM_PROFILE 1
 #if HM_PROFILE
 // Resolve which function signature macro will be used. Note that this only
 // is resolved when the (pre)compiler starts, so the syntax highlighting
