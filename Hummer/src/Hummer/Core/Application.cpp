@@ -17,9 +17,11 @@ namespace Hummer {
 
 	Application::Application()
 	{
+		HM_PROFILE_FUNCTION();
+
 		HM_CORE_ASSERT(!s_Instance, "Applicaton already exists!");
 		s_Instance = this;
-		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window = Window::Create(WindowProps());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
 		Renderer::Init();
@@ -30,17 +32,22 @@ namespace Hummer {
 
 	Application::~Application()
 	{
+		HM_PROFILE_FUNCTION();
 
 	}
 
 	void Application::PushLayer(Layer* layer)
 	{
+		HM_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
+		HM_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(layer);
 		layer->OnAttach();
 	}
@@ -48,6 +55,8 @@ namespace Hummer {
 
 	void Application::OnEvent(Event& e)
 	{
+		HM_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
@@ -64,16 +73,23 @@ namespace Hummer {
 
 	void Application::Run()
 	{
+		HM_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{
+			HM_PROFILE_SCOPE("runloop");
+
 			float time = (float)glfwGetTime();
 			TimeStep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
-					layer->OnUpdate(timestep);
+				{
+					HM_PROFILE_SCOPE("Layer onUpdate");
+					for (Layer* layer : m_LayerStack)
+						layer->OnUpdate(timestep);
+				}
 			}
 			
 			m_ImGuiLayer->Begin();

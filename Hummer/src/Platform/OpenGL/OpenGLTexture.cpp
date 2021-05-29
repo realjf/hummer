@@ -10,9 +10,15 @@ namespace Hummer
 	OpenGLTexture2D::OpenGLTexture2D(const std::string& path)
 		: m_Path(path)
 	{
+		HM_PROFILE_FUNCTION();
+
 		int width, height, channels;
 		stbi_set_flip_vertically_on_load(1);
-		stbi_uc* data = stbi_load(path.c_str(), &width, &height, &channels, 0);
+		stbi_uc* data = nullptr;
+		{
+			HM_PROFILE_SCOPE("stbi_load - OpenGLTexture2D::OpenGLTexture2D(const std::string&)");
+			data = stbi_load(path.c_str(), &width, &height, &channels, 0);
+		}
 		HM_CORE_ASSERT(data, "Failed to load image!");
 
 		m_Width = width;
@@ -52,6 +58,8 @@ namespace Hummer
 	OpenGLTexture2D::OpenGLTexture2D(uint32_t width, uint32_t height)
 		: m_Width(width), m_Height(height)
 	{
+		HM_PROFILE_FUNCTION();
+
 		m_InternalFormat = GL_RGBA8, m_DataFormat = GL_RGBA;
 
 		glCreateTextures(GL_TEXTURE_2D, 1, &m_RendererID);
@@ -67,11 +75,15 @@ namespace Hummer
 
 	OpenGLTexture2D::~OpenGLTexture2D()
 	{
+		HM_PROFILE_FUNCTION();
+
 		glDeleteTextures(1, &m_RendererID);
 	}
 
 	void OpenGLTexture2D::SetData(void* data, uint32_t size)
 	{
+		HM_PROFILE_FUNCTION();
+
 		uint32_t bpp = m_DataFormat == GL_RGBA ? 4 : 3;
 		HM_CORE_ASSERT(size == m_Width * m_Height * bpp, "Data must be entire texture!");
 		glTextureSubImage2D(m_RendererID, 0, 0, 0, m_Width, m_Height, m_DataFormat, GL_UNSIGNED_BYTE, data);
@@ -79,6 +91,8 @@ namespace Hummer
 
 	void OpenGLTexture2D::Bind(uint32_t slot) const
 	{
+		HM_PROFILE_FUNCTION();
+
 		glBindTextureUnit(slot, m_RendererID);
 	}
 

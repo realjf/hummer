@@ -11,6 +11,8 @@ namespace Hummer {
 
 	void Renderer::Init()
 	{
+		HM_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
 	}

@@ -7,6 +7,7 @@
 namespace Hummer {
 	Ref<VertexArray> VertexArray::Create()
 	{
+
 		switch (Renderer::GetAPI())
 		{
 		case RendererAPI::API::None:

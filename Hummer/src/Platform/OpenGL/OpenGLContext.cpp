@@ -16,6 +16,8 @@ namespace Hummer {
 
 	void OpenGLContext::Init()
 	{
+		HM_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		HM_CORE_ASSERT(status, "Failed to initialze Glad!");
@@ -28,6 +30,8 @@ namespace Hummer {
 
 	void OpenGLContext::SwapBuffers()
 	{
+		HM_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 

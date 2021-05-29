@@ -14,22 +14,20 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach()
 {
+	HM_PROFILE_FUNCTION();
 	m_CheckerboardTexture = Hummer::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach()
 {
-
+	HM_PROFILE_FUNCTION();
 }
 
 void Sandbox2D::OnUpdate(Hummer::TimeStep ts)
 {
 	HM_PROFILE_FUNCTION();
 	// Update
-	{
-		HM_PROFILE_SCOPE("CameraController::OnUpdate");
-		m_CameraController.OnUpdate(ts);
-	}
+	m_CameraController.OnUpdate(ts);
 
 	// Render
 	{
