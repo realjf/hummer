@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 #include "Hummer/Core/Log.h"
+#include "Hummer/Debug/Instrumentor.h"
 
 #ifdef HM_PLATFORM_WINDOWS
 	#include <Windows.h>

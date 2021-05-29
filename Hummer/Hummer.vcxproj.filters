@@ -1405,6 +1405,7 @@
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\Renderer2D.h" />
+    <ClInclude Include="src\Hummer\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hummer\Core\Application.cpp">
