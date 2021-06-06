@@ -9,7 +9,7 @@ namespace Hummer {
 
 
 
-	Hummer::VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size)
+	Hummer::Ref<VertexBuffer> VertexBuffer::Create(float* vertices, uint32_t size)
 	{
 		switch (Renderer::GetAPI())
 		{
@@ -17,14 +17,14 @@ namespace Hummer {
 			HM_CORE_ASSERT(false, "RendererAPI::None is currently not support!");
 			return nullptr;
 		case RendererAPI::API::OpenGL:
-			return new OpenGLVertexBuffer(vertices, size);
+			return  CreateRef<OpenGLVertexBuffer>(vertices, size);
 		}
 
 		HM_CORE_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;
 	}
 
-	Hummer::IndexBuffer* IndexBuffer::Create(uint32_t* indices, uint32_t size)
+	Hummer::Ref<Hummer::VertexBuffer> VertexBuffer::Create(uint32_t size)
 	{
 		switch (Renderer::GetAPI())
 		{
@@ -32,7 +32,22 @@ namespace Hummer {
 			HM_CORE_ASSERT(false, "RendererAPI::None is currently not support!");
 			return nullptr;
 		case RendererAPI::API::OpenGL:
-			return new OpenGLIndexBuffer(indices, size);
+			return  CreateRef<OpenGLVertexBuffer>(size);
+		}
+
+		HM_CORE_ASSERT(false, "Unknown RendererAPI!");
+		return nullptr;
+	}
+
+	Hummer::Ref<IndexBuffer> IndexBuffer::Create(uint32_t* indices, uint32_t size)
+	{
+		switch (Renderer::GetAPI())
+		{
+		case RendererAPI::API::None:
+			HM_CORE_ASSERT(false, "RendererAPI::None is currently not support!");
+			return nullptr;
+		case RendererAPI::API::OpenGL:
+			return  CreateRef<OpenGLIndexBuffer>(indices, size);
 		}
 
 		HM_CORE_ASSERT(false, "Unknown RendererAPI!");

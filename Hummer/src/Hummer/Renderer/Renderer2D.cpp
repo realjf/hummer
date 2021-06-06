@@ -1,6 +1,7 @@
 #include "hmpch.h"
 #include "Renderer2D.h"
 
+
 #include "VertexArray.h"
 #include "Shader.h"
 #include "Hummer/Renderer/RenderCommand.h"
@@ -35,8 +36,8 @@ namespace Hummer
 			-0.5f, 0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		std::shared_ptr<VertexBuffer> squareVB;
-		squareVB.reset(VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Ref<VertexBuffer> squareVB;
+		squareVB = VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 
 		squareVB->SetLayout({
 			{ ShaderDataType::Float3, "a_Position" },
@@ -45,8 +46,8 @@ namespace Hummer
 		s_Data->QuadVertexArray->AddVertexBuffer(squareVB);
 		 
 		unsigned int squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<IndexBuffer> squareIB;
-		squareIB.reset(IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		Ref<IndexBuffer> squareIB;
+		squareIB = IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		s_Data->QuadVertexArray->SetIndexBuffer(squareIB);
 
 		s_Data->WhiteTexture = Texture2D::Create(1, 1);

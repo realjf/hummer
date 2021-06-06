@@ -25,7 +25,7 @@ public:
 		};
 
 		std::shared_ptr<Hummer::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(Hummer::VertexBuffer::Create(vertices, sizeof(vertices)));
+		vertexBuffer = Hummer::VertexBuffer::Create(vertices, sizeof(vertices));
 
 		Hummer::BufferLayout layout = {
 			{ Hummer::ShaderDataType::Float3, "a_Position" },
@@ -36,7 +36,7 @@ public:
 
 		unsigned int indices[3] = { 0, 1, 2 };
 		std::shared_ptr<Hummer::IndexBuffer> indexBuffer;
-		indexBuffer.reset(Hummer::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		indexBuffer = Hummer::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 		m_SquareVA = Hummer::VertexArray::Create();
@@ -48,7 +48,7 @@ public:
 		};
 
 		std::shared_ptr<Hummer::VertexBuffer> squareVB;
-		squareVB.reset(Hummer::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		squareVB = Hummer::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 
 		squareVB->SetLayout({
 			{ Hummer::ShaderDataType::Float3, "a_Position" },
@@ -58,7 +58,7 @@ public:
 
 		unsigned int squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
 		std::shared_ptr<Hummer::IndexBuffer> squareIB;
-		squareIB.reset(Hummer::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		squareIB = Hummer::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
 
