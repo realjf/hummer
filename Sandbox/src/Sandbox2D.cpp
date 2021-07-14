@@ -42,7 +42,7 @@ void Sandbox2D::OnUpdate(Hummer::TimeStep ts)
 	Hummer::Renderer2D::ResetStats();
 	{
 		HM_PROFILE_SCOPE("Renderer Prep");
-		Hummer::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+		Hummer::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1.0f });
 		Hummer::RenderCommand::Clear();
 	}
 
