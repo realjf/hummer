@@ -46,7 +46,7 @@ void Sandbox2D::OnUpdate(Hummer::TimeStep ts)
 		Hummer::RenderCommand::Clear();
 	}
 
-	/*{
+	{
 
 		static float rotation = 0.0f;
 		rotation += ts * 50.0f;
@@ -61,16 +61,16 @@ void Sandbox2D::OnUpdate(Hummer::TimeStep ts)
 		Hummer::Renderer2D::EndScene();
 
 		Hummer::Renderer2D::BeginScene(m_CameraController.GetCamera());
-		for (float y = -5.0f; y < 5.0f; y += 0.1f)
+		for (float y = -5.0f; y < 5.0f; y += 0.5f)
 		{
-			for (float x = -5.0f; x < 5.0f; x += 0.1f)
+			for (float x = -5.0f; x < 5.0f; x += 0.5f)
 			{
 				glm::vec4 color = { (x + 5.0f) / 10.0f, 0.4f, (x + 5.0f) / 10.0f, 0.5f };
 				Hummer::Renderer2D::DrawQuad({ x, y }, { 0.45f, 0.45f }, color);
 			}
 		}
 		Hummer::Renderer2D::EndScene();
-	}*/
+	}
 
 	if (Hummer::Input::IsMouseButtonPressed(HM_MOUSE_BUTTON_LEFT))
 	{
