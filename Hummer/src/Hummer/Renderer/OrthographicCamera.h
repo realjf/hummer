@@ -3,7 +3,6 @@
 #include <glm/glm.hpp>
 
 namespace Hummer {
-
 	class OrthographicCamera
 	{
 	public:
