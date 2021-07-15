@@ -29,9 +29,10 @@ private:
 std::mt19937 Random::s_RandomEngine;
 std::uniform_int_distribution<std::mt19937::result_type> Random::s_Distribution;
 
-ParticleSystem::ParticleSystem()
+ParticleSystem::ParticleSystem(uint32_t maxParticle)
+	: m_PoolIndex(maxParticle - 1)
 {
-	m_ParticlePool.resize(1000);
+	m_ParticlePool.resize(maxParticle);
 }
 
 void ParticleSystem::OnUpdate(Hummer::TimeStep ts)
