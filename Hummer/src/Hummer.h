@@ -23,6 +23,7 @@
 #include "Hummer/Renderer/RenderCommand.h"
 
 #include "Hummer/Renderer/Buffer.h"
+#include "Hummer/Renderer/Framebuffer.h"
 #include "Hummer/Renderer/Shader.h"
 #include "Hummer/Renderer/Texture.h"
 #include "Hummer/Renderer/SubTexture2D.h"

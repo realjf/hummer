@@ -53,6 +53,11 @@ namespace Hummer {
 	}
 
 
+	void Application::Close()
+	{
+		m_Running = false;
+	}
+
 	void Application::OnEvent(Event& e)
 	{
 		HM_PROFILE_FUNCTION();

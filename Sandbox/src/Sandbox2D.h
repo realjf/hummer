@@ -20,6 +20,8 @@ private:
 	Hummer::Ref<Hummer::VertexArray> m_SquareVA;
 	Hummer::Ref<Hummer::Shader> m_FlatColorShader;
 
+	Hummer::Ref<Hummer::Framebuffer> m_Framebuffer;
+
 	Hummer::OrthographicCameraController m_CameraController;
 
 	Hummer::Ref<Hummer::Texture2D> m_CheckerboardTexture;
