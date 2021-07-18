@@ -15,13 +15,13 @@ namespace Hummer {
 
 	Application* Application::s_Instance = nullptr;
 
-	Application::Application()
+	Application::Application(const std::string& name)
 	{
 		HM_PROFILE_FUNCTION();
 
 		HM_CORE_ASSERT(!s_Instance, "Applicaton already exists!");
 		s_Instance = this;
-		m_Window = Window::Create(WindowProps());
+		m_Window = Window::Create(WindowProps(name));
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
 		Renderer::Init();
@@ -95,13 +95,13 @@ namespace Hummer {
 					for (Layer* layer : m_LayerStack)
 						layer->OnUpdate(timestep);
 				}
+
+				m_ImGuiLayer->Begin();
+				for (Layer* layer : m_LayerStack)
+					layer->OnImGuiRender();
+				m_ImGuiLayer->End();
 			}
-			
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
-			m_ImGuiLayer->End();
-			
+				
 			m_Window->OnUpdate();
 		}
 	}

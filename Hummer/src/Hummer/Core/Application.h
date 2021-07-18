@@ -17,7 +17,7 @@ namespace Hummer {
 	class Application
 	{
 	public:
-		Application();
+		Application(const std::string& name = "Hummer App");
 		virtual ~Application();
 
 		void Run();

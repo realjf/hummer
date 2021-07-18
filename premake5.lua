@@ -1,5 +1,6 @@
 workspace "Hummer"
-	architecture "x64"
+	architecture "x86_64"
+	startproject "Hummernut"
 
 	configurations
 	{
@@ -18,9 +19,11 @@ IncludeDir["ImGui"] = "Hummer/vendor/imgui"
 IncludeDir["glm"] = "Hummer/vendor/glm"
 IncludeDir["stb"] = "Hummer/vendor/stb_image"
 
-include "Hummer/vendor/GLFW"
-include "Hummer/vendor/GLAD"
-include "Hummer/vendor/imgui"
+group "Dependencies"
+	include "Hummer/vendor/GLFW"
+	include "Hummer/vendor/GLAD"
+	include "Hummer/vendor/imgui"
+group ""
 
 
 project "Hummer"
@@ -102,6 +105,60 @@ project "Hummer"
 
 project "Sandbox"
 	location "Sandbox"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"Hummer/vendor/spdlog/include",
+		"Hummer/src",
+		"Hummer/vendor",
+		"%{IncludeDir.glm}"
+	}
+
+	links
+	{
+		"Hummer"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+		defines
+		{
+			"HM_PLATFORM_WINDOWS"
+		}
+
+
+	filter "configurations:Debug"
+		defines "HM_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "HM_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "HM_DIST"
+		runtime "Release"
+		optimize "on"
+
+project "Hummernut"
+	location "Hummernut"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
