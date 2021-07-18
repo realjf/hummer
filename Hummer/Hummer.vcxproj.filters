@@ -84,7 +84,7 @@
     <ClInclude Include="src\Hummer\Core\Log.h">
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hummer\Core\MouseButtonCodes.h">
+    <ClInclude Include="src\Hummer\Core\MouseCodes.h">
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Core\TimeStep.h">
@@ -170,9 +170,6 @@
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
-      <Filter>src\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>src\Platform\Windows</Filter>

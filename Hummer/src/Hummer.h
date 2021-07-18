@@ -12,7 +12,7 @@
 
 #include "Hummer/Core/Input.h"
 #include "Hummer/Core/KeyCodes.h"
-#include "Hummer/Core/MouseButtonCodes.h"
+#include "Hummer/Core/MouseCodes.h"
 #include "Hummer/Renderer/OrthographicCameraController.h"
 
 #include "Hummer/ImGui/ImGuiLayer.h"
