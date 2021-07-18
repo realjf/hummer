@@ -24,6 +24,7 @@ namespace Hummer {
 		OrthographicCameraController m_CameraController;
 
 		Ref<Texture2D> m_CheckerboardTexture;
+		bool m_ViewportFocused = false, m_ViewportHovered = false;
 
 		glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 
