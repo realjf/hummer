@@ -18,6 +18,7 @@ IncludeDir["Glad"] = "Hummer/vendor/Glad/include"
 IncludeDir["ImGui"] = "Hummer/vendor/imgui"
 IncludeDir["glm"] = "Hummer/vendor/glm"
 IncludeDir["stb"] = "Hummer/vendor/stb_image"
+IncludeDir["entt"] = "Hummer/vendor/entt/include"
 
 group "Dependencies"
 	include "Hummer/vendor/GLFW"
@@ -66,6 +67,7 @@ project "Hummer"
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb}",
+		"%{IncludeDir.entt}",
 	}
 
 	links
@@ -125,7 +127,8 @@ project "Sandbox"
 		"Hummer/vendor/spdlog/include",
 		"Hummer/src",
 		"Hummer/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}",
 	}
 
 	links
