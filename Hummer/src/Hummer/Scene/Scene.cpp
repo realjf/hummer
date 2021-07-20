@@ -17,7 +17,10 @@ namespace Hummer {
 
 	Scene::Scene()
 	{
-		struct MeshComponent {};
+		struct MeshComponent {
+			float Data;
+			MeshComponent() = default;
+		};
 		struct TransformComponent
 		{
 			glm::mat4 Transform;
@@ -37,7 +40,7 @@ namespace Hummer {
 
 		m_Registry.on_construct<TransformComponent>().connect<&OnTransformConstruct>();
 
-		if(m_Registry.has<TransformComponent>(entity))
+		if (m_Registry.try_get<TransformComponent>(entity))
 			TransformComponent& transform = m_Registry.get<TransformComponent>(entity);
 
 		auto view = m_Registry.view<TransformComponent>();
@@ -52,11 +55,16 @@ namespace Hummer {
 		{
 			auto&[transform, mesh] = group.get<TransformComponent, MeshComponent>(entity);
 
-
+			// Renderer::Submit(mesh, transform);
 		}
 	}
 
 	Scene::~Scene()
+	{
+
+	}
+
+	void Scene::OnUpdate(TimeStep ts)
 	{
 
 	}

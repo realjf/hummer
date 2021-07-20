@@ -17,6 +17,8 @@
 
 #include "Hummer/ImGui/ImGuiLayer.h"
 
+#include "Hummer/Scene/Scene.h"
+
 // -------- Renderer ----------------------------
 #include "Hummer/Renderer/Renderer.h"
 #include "Hummer/Renderer/Renderer2D.h"

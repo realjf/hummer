@@ -171,6 +171,7 @@
     <ClInclude Include="src\Hummer\Renderer\SubTexture2D.h" />
     <ClInclude Include="src\Hummer\Renderer\Texture.h" />
     <ClInclude Include="src\Hummer\Renderer\VertexArray.h" />
+    <ClInclude Include="src\Hummer\Scene\Scene.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h" />
@@ -615,6 +616,7 @@
     <ClCompile Include="src\Hummer\Renderer\SubTexture2D.cpp" />
     <ClCompile Include="src\Hummer\Renderer\Texture.cpp" />
     <ClCompile Include="src\Hummer\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\Hummer\Scene\Scene.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
