@@ -18,6 +18,8 @@
 #include "Hummer/ImGui/ImGuiLayer.h"
 
 #include "Hummer/Scene/Scene.h"
+#include "Hummer/Scene/Entity.h"
+#include "Hummer/Scene/Components.h"
 
 // -------- Renderer ----------------------------
 #include "Hummer/Renderer/Renderer.h"

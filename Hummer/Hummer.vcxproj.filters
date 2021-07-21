@@ -22,6 +22,9 @@
     <Filter Include="src\Hummer\Renderer">
       <UniqueIdentifier>{90C3E737-FC24-C545-8592-0BF8F1F2FB04}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Hummer\Scene">
+      <UniqueIdentifier>{47E53066-33DE-4FB8-5C10-353D48682FC4}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
@@ -149,6 +152,12 @@
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\VertexArray.h">
       <Filter>src\Hummer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Scene\Components.h">
+      <Filter>src\Hummer\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Scene\Scene.h">
+      <Filter>src\Hummer\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -1419,6 +1428,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hummer\Scene\Entity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hummer\Core\Application.cpp">
@@ -1478,6 +1488,9 @@
     <ClCompile Include="src\Hummer\Renderer\VertexArray.cpp">
       <Filter>src\Hummer\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Hummer\Scene\Scene.cpp">
+      <Filter>src\Hummer\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1511,5 +1524,6 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
+    <ClCompile Include="src\Hummer\Scene\Entity.cpp" />
   </ItemGroup>
 </Project>

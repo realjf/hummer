@@ -182,7 +182,8 @@ project "Hummernut"
 		"Hummer/vendor/spdlog/include",
 		"Hummer/src",
 		"Hummer/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}",
 	}
 
 	links
