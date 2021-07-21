@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hummer/Renderer/OrthographicCamera.h"
+#include "SceneCamera.h"
 #include <glm/glm.hpp>
 
 namespace Hummer {
@@ -40,6 +40,11 @@ namespace Hummer {
 
 	struct CameraComponent
 	{
-		OrthographicCamera Camera;
+		SceneCamera Camera;
+		bool Primary = true;
+		bool FixedAspectRatio = false;
+
+		CameraComponent() = default;
+		CameraComponent(const CameraComponent&) = default;
 	};
 }

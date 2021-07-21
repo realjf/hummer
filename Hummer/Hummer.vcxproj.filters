@@ -1429,6 +1429,8 @@
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Scene\Entity.h" />
+    <ClInclude Include="src\Hummer\Renderer\Camera.h" />
+    <ClInclude Include="src\Hummer\Scene\SceneCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hummer\Core\Application.cpp">
@@ -1525,5 +1527,6 @@
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\Scene\Entity.cpp" />
+    <ClCompile Include="src\Hummer\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>
