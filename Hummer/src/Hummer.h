@@ -20,6 +20,7 @@
 #include "Hummer/Scene/Scene.h"
 #include "Hummer/Scene/Entity.h"
 #include "Hummer/Scene/Components.h"
+#include "Hummer/Scene/ScriptableEntity.h"
 
 // -------- Renderer ----------------------------
 #include "Hummer/Renderer/Renderer.h"

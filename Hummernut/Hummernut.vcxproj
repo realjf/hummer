@@ -82,7 +82,7 @@
       <AdditionalIncludeDirectories>..\Hummer\vendor\spdlog\include;..\Hummer\src;..\Hummer\vendor;..\Hummer\vendor\glm;..\Hummer\vendor\entt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -101,7 +101,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -121,7 +121,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -132,10 +132,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\EditorLayer.h" />
+    <ClInclude Include="src\Panels\SceneHierarchyPanel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\EditorLayer.cpp" />
     <ClCompile Include="src\HummernutApp.cpp" />
+    <ClCompile Include="src\Panels\SceneHierarchyPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hummer\Hummer.vcxproj">

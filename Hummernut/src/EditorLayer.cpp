@@ -5,6 +5,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+
 namespace Hummer {
 	EditorLayer::EditorLayer()
 		: Layer("EditorLayer"), m_CameraController(1280.0f / 720.0f, true)
@@ -35,17 +36,28 @@ namespace Hummer {
 		auto& cc = m_SecondCamera.AddComponent<CameraComponent>();
 		cc.Primary = false;
 
-		/*class CameraController : public ScriptableEntity
+		class CameraController : public ScriptableEntity
 		{
 		public:
 			void OnCreate()
 			{
-
+				auto& transform = GetComponent<TransformComponent>().Transform;
+				transform[3][0] = rand() % 10 - 5.0f;
 			}
 
 			void OnUpdate(TimeStep ts)
 			{
+				auto& transform = GetComponent<TransformComponent>().Transform;
+				float speed = 5.0f;
 
+				if (Input::IsKeyPressed(Key::A))
+					transform[3][0] -= speed * ts;
+				if (Input::IsKeyPressed(Key::D))
+					transform[3][0] += speed * ts;
+				if (Input::IsKeyPressed(Key::W))
+					transform[3][1] += speed * ts;
+				if (Input::IsKeyPressed(Key::S))
+					transform[3][1] -= speed * ts;
 			}
 
 			void OnDestroy()
@@ -54,7 +66,10 @@ namespace Hummer {
 			}
 		};
 
-		m_SecondCamera.AddComponent<NativeScriptComponent>(new CameraController());*/
+		m_CameraEntity.AddComponent<NativeScriptComponent>().Bind<CameraController>();
+		m_SecondCamera.AddComponent<NativeScriptComponent>().Bind<CameraController>();
+
+		m_SceneHierarchyPanel.SetContext(m_ActiveScene);
 	}
 
 	void EditorLayer::OnDetach()
@@ -72,7 +87,6 @@ namespace Hummer {
 			//&& (spec.Width != m_ViewportSize.x || spec.Height != m_ViewportSize.y)
 			)
 		{
-			HM_ERROR("{0},{1}", spec.Width, m_ViewportSize.x);
 			m_Framebuffer->Resize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
 			m_CameraController.OnResize(m_ViewportSize.x, m_ViewportSize.y);
 
@@ -168,6 +182,8 @@ namespace Hummer {
 
 			ImGui::EndMenuBar();
 		}
+
+		m_SceneHierarchyPanel.OnImGuiRender();
 
 		ImGui::Begin("Settings");
 
