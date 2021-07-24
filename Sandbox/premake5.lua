@@ -41,6 +41,7 @@ project "Sandbox"
 		defines "HM_DEBUG"
 		runtime "Debug"
 		symbols "on"
+		staticruntime "On"
 
 	filter "configurations:Release"
 		defines "HM_RELEASE"

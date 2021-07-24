@@ -66,7 +66,7 @@ namespace Hummer {
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
 
-		HM_CORE_TRACE("{0}", e);
+		//HM_CORE_TRACE("{0}", e);
 
 		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend();++it)
 		{

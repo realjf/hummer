@@ -18,6 +18,7 @@ group "Dependencies"
 	include "Hummer/vendor/GLFW"
 	include "Hummer/vendor/GLAD"
 	include "Hummer/vendor/imgui"
+	include "Hummer/vendor/yaml-cpp"
 group ""
 
 include "Hummer"

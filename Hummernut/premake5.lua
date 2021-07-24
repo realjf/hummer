@@ -21,6 +21,7 @@ project "Hummernut"
 		"%{wks.location}/Hummer/vendor",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
+		"%{IncludeDir.ImGuizmo}",
 	}
 
 	links
@@ -41,6 +42,7 @@ project "Hummernut"
 		defines "HM_DEBUG"
 		runtime "Debug"
 		symbols "on"
+		staticruntime "On"
 
 	filter "configurations:Release"
 		defines "HM_RELEASE"
