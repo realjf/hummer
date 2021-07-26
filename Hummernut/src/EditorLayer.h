@@ -3,6 +3,8 @@
 #include "Hummer.h"
 #include "Panels/SceneHierarchyPanel.h"
 
+#include "Hummer/Renderer/EditorCamera.h"
+
 namespace Hummer {
 	class EditorLayer : public Layer
 	{
@@ -35,6 +37,8 @@ namespace Hummer {
 		Entity m_CameraEntity;
 		Entity m_SecondCamera;
 		bool m_PrimaryCamera = true;
+
+		EditorCamera m_EditorCamera;
 
 		Ref<Texture2D> m_CheckerboardTexture;
 		bool m_ViewportFocused = false, m_ViewportHovered = false;

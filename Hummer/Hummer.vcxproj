@@ -161,6 +161,7 @@
     <ClInclude Include="src\Hummer\Math\Math.h" />
     <ClInclude Include="src\Hummer\Renderer\Buffer.h" />
     <ClInclude Include="src\Hummer\Renderer\Camera.h" />
+    <ClInclude Include="src\Hummer\Renderer\EditorCamera.h" />
     <ClInclude Include="src\Hummer\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Hummer\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Hummer\Renderer\OrthographicCamera.h" />
@@ -615,6 +616,7 @@
     <ClCompile Include="src\Hummer\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Hummer\Math\Math.cpp" />
     <ClCompile Include="src\Hummer\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Hummer\Renderer\EditorCamera.cpp" />
     <ClCompile Include="src\Hummer\Renderer\Framebuffer.cpp" />
     <ClCompile Include="src\Hummer\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Hummer\Renderer\OrthographicCameraController.cpp" />

@@ -4,6 +4,7 @@
 #include "Texture.h"
 #include "SubTexture2D.h"
 #include "Hummer/Renderer/Camera.h"
+#include "Hummer/Renderer/EditorCamera.h"
 
 namespace Hummer
 {
@@ -14,6 +15,7 @@ namespace Hummer
 		static void Shutdown();
 
 		static void BeginScene(const Camera& camera, const glm::mat4& transform);
+		static void BeginScene(const EditorCamera& camera);
 		static void BeginScene(const OrthographicCamera& camera);
 		static void EndScene();
 		static void Flush();
@@ -47,6 +49,7 @@ namespace Hummer
 
 		static Statistics GetStats();
 		static void ResetStats();
+		static void StartBatch();
 	private:
 		static void FlushAndReset();
 	};
