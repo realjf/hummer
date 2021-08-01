@@ -12,6 +12,7 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
+#include <filesystem>
 
 #include "Hummer/Core/Log.h"
 #include "Hummer/Debug/Instrumentor.h"

@@ -14,6 +14,7 @@ namespace Hummer {
 		void SetContext(const Ref<Scene>& context);
 
 		void OnImGuiRender();
+		void SetSelectedEntity(Entity entity);
 
 		Entity GetSelectedEntity() const { return m_SelectionContext; }
 

@@ -101,7 +101,7 @@ namespace Hummer {
 		// Resize	
 		if (FramebufferSpecification spec = m_Framebuffer->GetSpecification(); 
 			m_ViewportSize.x > 0.0f && m_ViewportSize.y > 0.0f
-			//&& (spec.Width != m_ViewportSize.x || spec.Height != m_ViewportSize.y)
+			&& (spec.Width != m_ViewportSize.x || spec.Height != m_ViewportSize.y)
 			)
 		{
 			m_Framebuffer->Resize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
@@ -115,8 +115,9 @@ namespace Hummer {
 		if (m_ViewportFocused)
 		{
 			m_CameraController.OnUpdate(ts);
-			m_EditorCamera.OnUpdate(ts);
 		}
+
+		m_EditorCamera.OnUpdate(ts);
 
 
 		// Render
@@ -143,7 +144,8 @@ namespace Hummer {
 		if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
 		{
 			int pixelData = m_Framebuffer->ReadPixel(1, mouseX, mouseY);
-			HM_CORE_WARN("Pixel data = {0}", pixelData);
+			// HM_INFO("Pixel Data: {0}", pixelData);
+			m_HoveredEntity = pixelData < 0 ? Entity() : Entity((entt::entity)pixelData, m_ActiveScene.get());
 		}
 
 		m_Framebuffer->UnBind();
@@ -236,6 +238,11 @@ namespace Hummer {
 		m_SceneHierarchyPanel.OnImGuiRender();
 
 		ImGui::Begin("Stats");
+
+		std::string name = "None";
+		if (m_HoveredEntity)
+			name = m_HoveredEntity.GetComponent<TagComponent>().Tag;
+		ImGui::Text("Hovered Entity: %s", name.c_str());
 
 		auto stats = Renderer2D::GetStats();
 		ImGui::Text("Renderer2D Stats:");
@@ -330,6 +337,7 @@ namespace Hummer {
 
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<KeyPressedEvent>(HM_BIND_EVENT_FN(EditorLayer::OnKeyPressed));
+		dispatcher.Dispatch<MouseButtonPressedEvent>(HM_BIND_EVENT_FN(EditorLayer::OnMouseButtonPressed));
 
 	}
 
@@ -365,18 +373,32 @@ namespace Hummer {
 
 		// Gizmos
 		case Key::Q:
-			m_GizmoType = -1;
+			if(!ImGuizmo::IsUsing())
+				m_GizmoType = -1;
 			break;
 		case Key::W:
-			m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
+			if (!ImGuizmo::IsUsing())
+				m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
+			break;
+		case Key::E:
+			if (!ImGuizmo::IsUsing())
+				m_GizmoType = ImGuizmo::OPERATION::ROTATE;
 			break;
 		case Key::R:
-			m_GizmoType = ImGuizmo::OPERATION::ROTATE;
-			break;
-		case Key::G:
-			m_GizmoType = ImGuizmo::OPERATION::SCALE;
+			if (!ImGuizmo::IsUsing())
+				m_GizmoType = ImGuizmo::OPERATION::SCALE;
 			break;
 		}
+	}
+
+	bool EditorLayer::OnMouseButtonPressed(MouseButtonPressedEvent& e)
+	{
+		if (e.GetMouseButton() == Mouse::ButtonLeft)
+		{
+			if (m_ViewportHovered && !ImGuizmo::IsOver() && !Input::IsKeyPressed(Key::LeftAlt))
+				m_SceneHierarchyPanel.SetSelectedEntity(m_HoveredEntity);
+		}
+		return false;
 	}
 
 	void EditorLayer::NewScene()

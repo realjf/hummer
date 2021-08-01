@@ -19,6 +19,9 @@
     <Filter Include="src\Hummer\ImGui">
       <UniqueIdentifier>{54ED8065-40E6-9FB7-6918-853C55707FC3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Hummer\Math">
+      <UniqueIdentifier>{C37F53FB-2F0B-C1BF-381C-44B4A4261DC0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Hummer\Renderer">
       <UniqueIdentifier>{90C3E737-FC24-C545-8592-0BF8F1F2FB04}</UniqueIdentifier>
     </Filter>
@@ -99,6 +102,9 @@
     <ClInclude Include="src\Hummer\Core\TimeStep.h">
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hummer\Core\Timer.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hummer\Core\Window.h">
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
@@ -120,10 +126,16 @@
     <ClInclude Include="src\Hummer\ImGui\ImGuiLayer.h">
       <Filter>src\Hummer\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Hummer\Math\Math.h">
+      <Filter>src\Hummer\Math</Filter>
+    </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\Buffer.h">
       <Filter>src\Hummer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\Camera.h">
+      <Filter>src\Hummer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Renderer\EditorCamera.h">
       <Filter>src\Hummer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\Framebuffer.h">
@@ -157,6 +169,9 @@
       <Filter>src\Hummer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\Texture.h">
+      <Filter>src\Hummer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Renderer\UniformBuffer.h">
       <Filter>src\Hummer\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Renderer\VertexArray.h">
@@ -199,6 +214,9 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLUniformBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
@@ -1455,8 +1473,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hummer\Math\Math.h" />
-    <ClInclude Include="src\Hummer\Renderer\EditorCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Hummer\Core\Application.cpp">
@@ -1480,7 +1496,13 @@
     <ClCompile Include="src\Hummer\ImGui\ImGuiLayer.cpp">
       <Filter>src\Hummer\ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="src\Hummer\Math\Math.cpp">
+      <Filter>src\Hummer\Math</Filter>
+    </ClCompile>
     <ClCompile Include="src\Hummer\Renderer\Buffer.cpp">
+      <Filter>src\Hummer\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\Renderer\EditorCamera.cpp">
       <Filter>src\Hummer\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\Renderer\Framebuffer.cpp">
@@ -1511,6 +1533,9 @@
       <Filter>src\Hummer\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\Renderer\Texture.cpp">
+      <Filter>src\Hummer\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hummer\Renderer\UniformBuffer.cpp">
       <Filter>src\Hummer\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Hummer\Renderer\VertexArray.cpp">
@@ -1546,6 +1571,9 @@
     <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLUniformBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1567,7 +1595,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Hummer\Math\Math.cpp" />
-    <ClCompile Include="src\Hummer\Renderer\EditorCamera.cpp" />
   </ItemGroup>
 </Project>

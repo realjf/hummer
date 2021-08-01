@@ -32,7 +32,7 @@ namespace Hummer {
 		template<typename T>
 		bool HasComponent()
 		{
-			return m_Scene->m_Registry.try_get<T>(m_EntityHandle);
+			return m_Scene->m_Registry.try_get<T>(m_EntityHandle) ? true : false;
 		}
 
 		template<typename T>

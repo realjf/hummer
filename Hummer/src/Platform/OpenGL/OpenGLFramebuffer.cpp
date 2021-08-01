@@ -218,10 +218,6 @@ namespace Hummer {
 	{
 		HM_CORE_ASSERT(attachmentIndex < m_ColorAttachments.size());
 
-		// int value = -1;
-		// glClearTexImage(m_ColorAttachments[1], 0, GL_RED_INTEGER, GL_INT, &value);
-
-
 		auto& spec = m_ColorAttachmentSpecifications[attachmentIndex];
 
 		glClearTexImage(m_ColorAttachments[attachmentIndex], 0, Utils::HummerFBTextureFormatToGL(spec.TextureFormat), GL_INT, &value);

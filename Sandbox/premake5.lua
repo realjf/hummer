@@ -21,6 +21,8 @@ project "Sandbox"
 		"%{wks.location}/Hummer/vendor",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
+		"%{IncludeDir.shaderc}",
+		"%{IncludeDir.SPIRV_Cross}",
 	}
 
 	links

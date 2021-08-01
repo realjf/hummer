@@ -9,4 +9,6 @@ IncludeDir["stb"] = "%{wks.location}/Hummer/vendor/stb_image"
 IncludeDir["entt"] = "%{wks.location}/Hummer/vendor/entt/include"
 IncludeDir["yaml_cpp"] = "%{wks.location}/Hummer/vendor/yaml-cpp/include"
 IncludeDir["ImGuizmo"] = "%{wks.location}/Hummer/vendor/ImGuizmo"
+IncludeDir["shaderc"] = "%{wks.location}/Hummer/vendor/shaderc/include"
+IncludeDir["SPIRV_Cross"] = "%{wks.location}/Hummer/vendor/SPIRV-Cross"
 

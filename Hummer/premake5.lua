@@ -26,7 +26,8 @@ project "Hummer"
 
 	defines
 	{
-		"_CRT_SECURE_NO_WARNINGS"
+		"_CRT_SECURE_NO_WARNINGS",
+		"GLFW_INCLUDE_NONE"
 	}
 
 
@@ -42,6 +43,8 @@ project "Hummer"
 		"%{IncludeDir.entt}",
 		"%{IncludeDir.yaml_cpp}",
 		"%{IncludeDir.ImGuizmo}",
+		"%{IncludeDir.shaderc}",
+		"%{IncludeDir.SPIRV_Cross}",
 	}
 
 	links
@@ -50,7 +53,7 @@ project "Hummer"
 		"Glad",
 		"ImGui",
 		"yaml-cpp",
-		"opengl32.lib"
+		"opengl32.lib",
 	}
 	
 	filter "files:vendor/ImGuizmo/**.cpp"
