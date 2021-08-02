@@ -355,3 +355,5 @@ bin/
 bin-int/
 
 *.json
+Hummer/vendor/VulkanSDK
+Hummernut/assets/cache
