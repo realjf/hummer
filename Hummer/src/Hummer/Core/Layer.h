@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Hummer/Core/Core.h"
+#include "Hummer/Core/Base.h"
 #include "Hummer/Core/TimeStep.h"
 #include "Hummer/Events/Event.h"
 
 namespace Hummer {
-	class HUMMER_API Layer
+	class Layer
 	{
 	public:
 		Layer(const std::string& name = "Layer");

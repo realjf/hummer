@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Hummer/Core/Core.h"
+#include "Hummer/Core/Base.h"
 #include "Layer.h"
 
 #include <vector>
 
 namespace Hummer {
 
-	class HUMMER_API LayerStack
+	class LayerStack
 	{
 	public:
 		LayerStack() = default;

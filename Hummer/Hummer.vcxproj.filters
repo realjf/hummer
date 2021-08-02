@@ -75,7 +75,10 @@
     <ClInclude Include="src\Hummer\Core\Application.h">
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Hummer\Core\Core.h">
+    <ClInclude Include="src\Hummer\Core\Assert.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core\Base.h">
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Core\EntryPoint.h">
@@ -97,6 +100,9 @@
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Core\MouseCodes.h">
+      <Filter>src\Hummer\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Hummer\Core\PlatformDetection.h">
       <Filter>src\Hummer\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Hummer\Core\TimeStep.h">

@@ -2,7 +2,7 @@
 
 #include "hmpch.h"
 
-#include "Hummer/Core/Core.h"
+#include "Hummer/Core/Base.h"
 #include "Hummer/Events/Event.h"
 
 namespace Hummer {
@@ -20,7 +20,7 @@ namespace Hummer {
 		{}
 	};
 
-	class HUMMER_API Window
+	class Window
 	{
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;

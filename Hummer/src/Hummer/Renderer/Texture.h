@@ -1,7 +1,7 @@
 #pragma once
 
 
-#include "Hummer/Core/Core.h"
+#include "Hummer/Core/Base.h"
 #include <string>
 
 namespace Hummer

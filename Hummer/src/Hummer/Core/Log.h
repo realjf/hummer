@@ -1,14 +1,14 @@
 #pragma once
 
 
-#include "Core.h"
+#include "Base.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/fmt/ostr.h"
 
 
 namespace Hummer {
-	class HUMMER_API Log
+	class Log
 	{
 	public:
 		static void Init();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hummer/Core/Core.h"
+#include "Hummer/Core/Base.h"
 #include "Hummer/Scene/Scene.h"
 #include "Hummer/Scene/Entity.h"
 

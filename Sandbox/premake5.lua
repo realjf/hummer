@@ -21,8 +21,6 @@ project "Sandbox"
 		"%{wks.location}/Hummer/vendor",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
-		"%{IncludeDir.shaderc}",
-		"%{IncludeDir.SPIRV_Cross}",
 	}
 
 	links
@@ -43,7 +41,11 @@ project "Sandbox"
 		defines "HM_DEBUG"
 		runtime "Debug"
 		symbols "on"
-		staticruntime "On"
+		
+		postbuildcommands
+		{
+			"{COPY} %{LibraryDir.VulkanSDK_DebugDLL} %{wks.location}/bin/" .. outputdir .. "/%{prj.name}"
+		}
 
 	filter "configurations:Release"
 		defines "HM_RELEASE"

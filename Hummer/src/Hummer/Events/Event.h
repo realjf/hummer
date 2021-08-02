@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Hummer/Core/Core.h"
+#include "Hummer/Core/Base.h"
 #include "hmpch.h"
 
 namespace Hummer {
@@ -35,7 +35,7 @@ namespace Hummer {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class HUMMER_API Event
+	class Event
 	{
 		// friend class EventDispatcher;
 	public:

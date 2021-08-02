@@ -22,13 +22,11 @@ project "Hummernut"
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
 		"%{IncludeDir.ImGuizmo}",
-		"%{IncludeDir.shaderc}",
-		"%{IncludeDir.SPIRV_Cross}",
 	}
 
 	links
 	{
-		"Hummer"
+		"Hummer",
 	}
 
 	filter "system:windows"
@@ -39,12 +37,15 @@ project "Hummernut"
 			"HM_PLATFORM_WINDOWS"
 		}
 
-
 	filter "configurations:Debug"
 		defines "HM_DEBUG"
 		runtime "Debug"
 		symbols "on"
-		staticruntime "On"
+		
+		postbuildcommands
+		{
+			"{COPY} %{LibraryDir.VulkanSDK_DebugDLL} %{wks.location}/bin/" .. outputdir .. "/%{prj.name}"
+		}
 
 	filter "configurations:Release"
 		defines "HM_RELEASE"

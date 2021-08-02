@@ -43,8 +43,7 @@ project "Hummer"
 		"%{IncludeDir.entt}",
 		"%{IncludeDir.yaml_cpp}",
 		"%{IncludeDir.ImGuizmo}",
-		"%{IncludeDir.shaderc}",
-		"%{IncludeDir.SPIRV_Cross}",
+		"%{IncludeDir.VulkanSDK}",
 	}
 
 	links
@@ -65,23 +64,40 @@ project "Hummer"
 
 		defines
 		{
-			"HM_PLATFORM_WINDOWS",
-			"HM_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
 		}
 
 	filter "configurations:Debug"
 		defines "HM_DEBUG"
 		runtime "Debug"
 		symbols "on"
-		staticruntime "On"
+		
+		links
+		{
+			"%{Library.ShaderC_Debug}",
+			"%{Library.SPIRV_Cross_Debug}",
+			"%{Library.SPIRV_Cross_GLSL_Debug}"
+		}
 
 	filter "configurations:Release"
 		defines "HM_RELEASE"
 		runtime "Release"
 		optimize "on"
+		
+		links
+		{
+			"%{Library.ShaderC_Release}",
+			"%{Library.SPIRV_Cross_Release}",
+			"%{Library.SPIRV_Cross_GLSL_Release}"
+		}
 
 	filter "configurations:Dist"
 		defines "HM_DIST"
 		runtime "Release"
 		optimize "on"
+		
+		links
+		{
+			"%{Library.ShaderC_Release}",
+			"%{Library.SPIRV_Cross_Release}",
+			"%{Library.SPIRV_Cross_GLSL_Release}"
+		}

@@ -2,6 +2,7 @@
 
 #include "Hummer.h"
 #include "Panels/SceneHierarchyPanel.h"
+#include "Panels/ContentBrowserPanel.h"
 
 #include "Hummer/Renderer/EditorCamera.h"
 
@@ -25,11 +26,10 @@ namespace Hummer {
 		void NewScene();
 		void OpenScene();
 		void SaveSceneAs();
-
+		void OpenScene(const std::filesystem::path& path);
 	private:
 		Ref<VertexArray> m_SquareVA;
 		Ref<Shader> m_FlatColorShader;
-
 		Ref<Framebuffer> m_Framebuffer;
 
 		OrthographicCameraController m_CameraController;
@@ -54,6 +54,8 @@ namespace Hummer {
 
 		// Panels
 		SceneHierarchyPanel m_SceneHierarchyPanel;
+		ContentBrowserPanel m_ContentBrowserPanel;
+
 	};
 
 }

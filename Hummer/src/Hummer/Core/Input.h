@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Hummer/Core/Core.h"
+#include "Hummer/Core/Base.h"
 #include "Hummer/Core/KeyCodes.h"
 #include "Hummer/Core/MouseCodes.h"
 
 #include <glm/glm.hpp>
 
 namespace Hummer {
-	class HUMMER_API Input
+	class Input
 	{
 	public:
 		static bool IsKeyPressed(const KeyCode keycode);
