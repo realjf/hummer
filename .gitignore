@@ -12,5 +12,7 @@ bin-int/
 **.vcxproj.user
 
 
+
+*.json
 Hummer/vendor/VulkanSDK
 Hummernut/assets/cache
